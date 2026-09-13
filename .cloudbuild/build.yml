@@ -1,0 +1,29 @@
+version: 2.0
+
+env:
+  resource:
+    type: docker
+    arch: X86
+    class: 2U8G
+
+steps:
+  PRE_BUILD:
+    - sh:
+        inputs:
+          command: |
+            python3 --version
+            python3 -m pip install --upgrade pip
+            python3 -m pip install -r requirements.txt
+
+  BUILD:
+    - python:
+        name: Python test and build
+        inputs:
+          command: |
+            python3 -m compileall app
+            python3 -m pytest -q
+            mkdir -p dist
+            tar -czf dist/agentic-devops-demo.tar.gz app tests requirements.txt Dockerfile README.md
+    - upload_artifact:
+        inputs:
+          path: "dist/*"e

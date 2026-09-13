@@ -1,3 +1,36 @@
+## MCP Implementation Repository
+
+This project is implemented and maintained in the following GitHub repository:
+**[agentic-devops-codearts-MCP](https://github.com/Noir2001/agentic-devops-codearts-MCP)**
+The repository contains the MCP-based implementation used to connect CodeArts Agent with DevOps tools and demonstrate an Agentic DevOps workflow.
+The MCP layer provides the tool connectivity required for the Agent to interact with external DevOps capabilities.
+The overall mechanism is:
+
+```text
+User Request
+     |
+     v
+CodeArts Agent
+     |
+     v
+Agent Skill
+     |
+     v
+MCP Server
+     |
+     +-------------------+
+     |                   |
+     v                   v
+CodeArts Check      CodeArts Build
+     |                   |
+     v                   v
+Check Result         Build Result
+     |                   |
+     +---------+---------+
+               |
+               v
+          Final Report
+
 # Agentic DevOps Demo
 A simple Proof of Concept (PoC) for testing autonomous DevOps with Huawei CodeArts Agent.
 

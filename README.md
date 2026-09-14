@@ -6,6 +6,7 @@ The repository contains the MCP-based implementation used to connect CodeArts Ag
 The MCP layer provides the tool connectivity required for the Agent to interact with external DevOps capabilities.
 The overall mechanism is:
 
+
 ```text
 User Request
      |
@@ -106,6 +107,7 @@ CodeArts Check
 CodeArts Build
      |
      +---- FAIL ----> Stop and Report
+
      |
    SUCCESS
      |
@@ -119,3 +121,5 @@ test_calculate_total
 test_health
 Expected local test result:
 3 passed
+
+
